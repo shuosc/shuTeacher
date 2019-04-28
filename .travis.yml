@@ -21,4 +21,4 @@ jobs:
         - chmod 600 ./deploy_rsa
         - ssh-add ./deploy_rsa
       script:
-        - ssh -i ./deploy_rsa root@cloud.shu.xn--io0a7i changeImage.sh teacher $DOCKER_USERNAME/shu-teacher:$TRAVIS_BUILD_ID
+        - ssh -i ./deploy_rsa root@cloud.shu.xn--io0a7i ./changeImage.sh teacher $DOCKER_USERNAME/shu-teacher:$TRAVIS_BUILD_ID
