@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	Invalid = 0
+	Invalid = iota
 	Admin
 	NormalUser
 )
