@@ -85,3 +85,5 @@ Temporary Items
 *.out
 .idea
 data
+/web/gin-bin
+logfile
