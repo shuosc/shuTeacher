@@ -1,0 +1,12 @@
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: build
+      language: minimal
+      script:
+        - docker build . -t shu-teacher
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker tag shu-teacher $DOCKER_USERNAME/shu-teacher:$TRAVIS_BUILD_ID
+        - docker push $DOCKER_USERNAME/shu-teacher
