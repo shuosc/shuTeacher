@@ -8,6 +8,7 @@ import (
 )
 
 func getTeacherHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	id := r.URL.Query().Get("id")
 	teacher, err := model.Get(id)
 	if err != nil {
