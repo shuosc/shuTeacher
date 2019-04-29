@@ -9,5 +9,6 @@ FROM alpine
 MAINTAINER longfangsong@icloud.com
 COPY --from=builder /go/src/shuTeacher/shuTeacher /
 WORKDIR /
+CMD ./shuTeacher
 ENV PORT 8000
 EXPOSE 8000
