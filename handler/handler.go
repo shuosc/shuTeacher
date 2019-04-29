@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"shuTeacher/model"
 	"shuTeacher/service/crawl"
@@ -14,6 +15,7 @@ func getTeacherHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		teacher, err = crawl.TeacherInfo(id)
 		if err != nil {
+			log.Println(err)
 			w.WriteHeader(404)
 			return
 		}
